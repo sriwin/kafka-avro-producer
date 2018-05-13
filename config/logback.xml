@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console-appender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>.%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+    </appender>
+
+    <appender name="file-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>avro-producer.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>avro-producer.%d{yyyy-MM-dd}.log</FileNamePattern>
+
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.sriwin" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="file-appender"/>
+        <appender-ref ref="console-appender"/>
+    </logger>
+
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="console-appender"/>
+        <appender-ref ref="file-appender"/>
+    </root>
+</configuration>

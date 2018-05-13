@@ -1,0 +1,15 @@
+{
+   "namespace": "com.sriwin.kafka.model",
+   "type":"record",
+   "name":"User",
+   "fields":[
+      {
+         "name":"fName",
+         "type":"string"
+      },
+      {
+         "name":"lName",
+         "type":"string"
+       }
+   ]
+}

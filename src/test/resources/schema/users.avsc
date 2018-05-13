@@ -1,0 +1,18 @@
+{
+   "type":"array",
+   "name":"UserList",
+   "items":{
+      "type":"record",
+      "name":"User",
+      "fields":[
+         {
+            "name":"fName",
+            "type":"string"
+         },
+         {
+            "name":"lName",
+            "type":"string"
+         }
+      ]
+   }
+}
