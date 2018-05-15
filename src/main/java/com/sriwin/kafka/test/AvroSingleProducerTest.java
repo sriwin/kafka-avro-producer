@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.util.UUID;
 
 public class AvroSingleProducerTest extends DriverScript {
-  private static final Logger logger = LoggerFactory.getLogger(ProduceService.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(AvroSingleProducerTest.class.getName());
 
   private static final String TEST_DATA_FILE = "user-test-data.json";
   private static final String SCHEMA_FILE = "schema/user.avsc";

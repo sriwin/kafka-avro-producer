@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.UUID;
 
 public class AvroMultipleProducerTest extends DriverScript {
-  private static final Logger logger = LoggerFactory.getLogger(ProduceService.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(AvroSingleProducerTest.class.getName());
 
   private static final String TEST_DATA_FILE = "users-test-data.json";
   private static final String SCHEMA_FILE = "schema/users.avsc";
@@ -46,7 +46,6 @@ public class AvroMultipleProducerTest extends DriverScript {
 
         GenericData.Record genericRecord = (GenericData.Record) iterator.next();
         logger.info("GenericRecord : " + genericRecord);
-
 
         // prepare ProducerRecord
         ProducerRecord<String, GenericRecord> producerRecord = new ProducerRecord<String, GenericRecord>(

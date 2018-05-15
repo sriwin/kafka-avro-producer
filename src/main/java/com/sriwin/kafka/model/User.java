@@ -4,24 +4,17 @@ import lombok.*;
 
 @Getter
 @Setter
-
 public class User {
-  private String firstName;
-  private String lastName;
-  private String id;
+  private String fName;
+  private String lName;
 
-  public User(String id, String firstName, String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.id = id;
+  public User(String fName, String lName) {
+    this.fName = fName;
+    this.lName = lName;
   }
 
   @Override
-  public String   toString() {
-    return "User{" +
-        "firstName='" + firstName + '\'' +
-        ", lastName='" + lastName + '\'' +
-        ", id='" + id + '\'' +
-        '}';
+  public String toString() {
+    return fName + "-" + lName;
   }
 }
